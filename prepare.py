@@ -10,9 +10,9 @@ import acquire
 
 ################################## Temperature by State Prep Function ############################
 
-def prep_temp():
+def prep_temp(df):
     #change data type on Date
-    df.dt = df.dt.astype('datetime64[ns]')
+    df.index = df.dt.astype('datetime64[ns]')
     #set the index to Date
     df = df.set_index('dt').sort_index()
     #rename columns
